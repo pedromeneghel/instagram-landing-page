@@ -49,9 +49,9 @@
     phones[0].removeAttribute('class');
 
     setInterval(() => {
-        if(count === 5){
+        if(count === phones.length){
           count = 0;
-          phones[4].setAttribute('class', 'hidden');
+          phones[phones.length-1].setAttribute('class', 'hidden');
           phones[count].removeAttribute('class');
         }
   
