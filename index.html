@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram</title>
+
+  <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="phone">
+      <img src="./assets/img/img5.jpg" alt="Imagem 5" class="hidden">
+      <img src="./assets/img/img4.jpg" alt="Imagem 4" class="hidden">
+      <img src="./assets/img/img3.jpg" alt="Imagem 3" class="hidden">
+      <img src="./assets/img/img2.jpg" alt="Imagem 2" class="hidden">
+      <img src="./assets/img/img1.jpg" alt="Imagem 1" class="hidden">
+    </div>
+    <div class="access">
+      <div class="group">
+        <img src="./assets/img/instagram-logo-text.png" class="logo" alt="Instagram">
+        <img src="./assets/img/profile.jpg" alt="Pedro Meneghel" class="profile-photo">
+
+        <a href="#" class="login">Continuar como Pedro Meneghel</a>
+        <a href="#" class="logout">Remove conta</a>
+      </div>
+      <div class="group">
+        <p class="not-account">Não é pedro.meneghel?</p>
+        <p class="not-account"><span>Alternar contas</span> ou <span>Inscreva-se</span></p>
+      </div>
+      <div class="get-the-app">
+        <p>Get the app</p>
+        <div class="download">
+          <a href="#">
+            <img src="./assets/img/app-store.png" alt="Apple Store">
+          </a>
+          <a href="">
+            <img src="./assets/img/play-store.png" alt="Play Store">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const phones = document.querySelectorAll('.phone img');
+    var count = 0;
+
+    phones[0].removeAttribute('class');
+
+    setInterval(() => {
+        if(count === 5){
+          count = 0;
+          phones[4].setAttribute('class', 'hidden');
+          phones[count].removeAttribute('class');
+        }
+  
+        (count !== 0) && phones[count - 1].setAttribute('class', 'hidden');
+
+        phones[count].removeAttribute('class');
+
+        count++;
+      }, 2000);
+
+    
+  </script>
+
+</body>
+</html>
